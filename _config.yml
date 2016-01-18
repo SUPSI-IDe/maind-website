@@ -20,8 +20,12 @@ github_username:  jekyll
 # Build settings
 markdown: kramdown
 
-exclude: ['node_modules', 'Makefile']
+exclude: ['node_modules', 'Makefile', 'bourbon', 'neat']
 
 collections:
   projects:
     name: Projects
+    output: true
+  news:
+    name: News
+    output: true

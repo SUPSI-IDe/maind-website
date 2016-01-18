@@ -21,9 +21,10 @@ layout: default
   <h1>Projects</h1>
 
 <ul>
-  {% for project in site.projects %}
+{% assign collections = site.projects << sites.news %}
+  {% for project in site.documents %}
   <li>
-    <p>{{ project.bla }}</p>
+    <p>{{ project.title }}</p>
     <p>{{ project.content }}</p>
   </li>
   {% endfor %}
