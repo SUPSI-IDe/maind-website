@@ -8,8 +8,9 @@ It uses [Bourbon](http://bourbon.io/) and [neat.bourbon](http://neat.bourbon.io/
 
 * Install jekyll with ```gem install jekyll```
 * Install sass with ```gem install sass```
-* (If you have a mac, you may need to update Ruby [update Ruby](https://stackoverflow.com/questions/3696564/how-to-update-ruby-to-1-9-x-on-mac)
+* (If you have a mac, you may need to update Ruby)
 * Install bourbon and neat with ```gem install bourbon``` and ```gem install bourbon```
+* (If you have a mac you may need to [install make with either xcode or gcc tools](https://stackoverflow.com/questions/6767481/where-can-i-find-make-program-for-mac-os-x-lion)
 * Run the jekyll and browsersynch with ```make -j2 dev```
 * Access the website at [localhost:3000](http://localhost:3000/)
 
