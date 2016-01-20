@@ -1,0 +1,16 @@
+#main_box {
+  @include span-columns(6);
+  display: block;
+  height: 12em;
+  margin-bottom: 1.5em;
+  background-color: #6c9a8f;
+}
+
+#post_thumb {
+  @include span-columns(3);
+  @include omega(3n);
+  display: block;
+  height: 12em;
+  margin-bottom: 1.5em;
+  background-color: steelblue;
+}

@@ -1,11 +1,7 @@
 ---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
 ---
-
-// see http://bourbon.io/
-@import "../bourbon/bourbon";
-
-// see http://neat.bourbon.io/
-@import "../neat/neat";
 
 
 
@@ -108,7 +104,22 @@ textarea {
 
 // we have compoentents in /components
 
+// see http://bourbon.io/
+@import "../bourbon/bourbon";
+
+// see http://neat.bourbon.io/
+@import "../neat/neat";
+
+body {
+    @include outer-container;
+}
+
+@import "components/header";
+@import "components/postthumb";
+
 // and views in /views
+
+
 
 // no style goes into here
 

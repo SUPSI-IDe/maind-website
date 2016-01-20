@@ -1,13 +1,27 @@
-<header class="site-header">
+<header id="header" class="site-header">
 
-  <div class="wrapper">
+    <div id="header_top">
+        <img id="logo_supsi" src="{{ "/images/logo_supsi.png" | prepend: site.baseurl }}">
 
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }} 123</a>
+        <div id="socials">Facebook, Twitter, Vimeo, Flickr</div>
+    </div>
 
-    <nav>
-      
-    </nav>
+    <div id="header_bottom">
 
-  </div>
+        <img id="logo_maind" src="{{ "/images/logo_maind.png" | prepend: site.baseurl }}">
+
+        <nav id="header_nav">
+            <a href="{{ "/program/" | prepend: site.baseurl }}">Program</a> /
+            <a href="{{ "/admission/" | prepend: site.baseurl }}">Admission</a> /
+            <a href="{{ "/people/" | prepend: site.baseurl }}">People</a> /
+            <a href="{{ "/students/" | prepend: site.baseurl }}">Students</a> /
+            <a href="{{ "/portfolio/" | prepend: site.baseurl }}">Portfolio</a> /
+            <a href="{{ "/workshop/" | prepend: site.baseurl }}">Workshop</a> /
+            <a href="{{ "/research/" | prepend: site.baseurl }}">Research</a> /
+            <a href="{{ "/news/" | prepend: site.baseurl }}">News</a> /
+            <a href="{{ "/contacts/" | prepend: site.baseurl }}">Contacts</a>
+        </nav>
+
+    </div>
 
 </header>

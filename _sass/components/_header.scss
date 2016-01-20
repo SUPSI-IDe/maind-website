@@ -1,0 +1,42 @@
+#header {
+
+  #header_top {
+    height: 10em;
+    //background-color: darkkhaki;
+  }
+
+  #logo_supsi {
+
+    display: block;
+    @include span-columns(3);
+  }
+
+  #socials {
+    @include span-columns(3);
+    @include shift(6);
+    //@include omega();
+    text-align: right;
+    display: block;
+    //background-color: #00AA00;
+  }
+
+  #header_bottom {
+    height: 10em;
+    //background-color: #FFFFDF;
+  }
+
+  #logo_maind {
+    display: block;
+    @include span-columns(4);
+  }
+
+  #header_nav {
+    display: block;
+    @include span-columns(8);
+    //@include omega();
+    //background-color: #00d6b2;
+    text-align: right;
+    height: inherit;
+  }
+
+}
