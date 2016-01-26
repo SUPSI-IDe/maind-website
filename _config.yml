@@ -19,6 +19,8 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+sass:
+    sass_dir: _sass
 
 exclude: ['node_modules', 'Makefile', 'bourbon', 'neat']
 
@@ -29,6 +31,39 @@ collections:
   news:
     name: News
     output: true
+  students:
+    name: Students
+    output: true
+  workshops:
+    name: Workshops
+    output: true
+  openlectures:
+    name: Openlectures
+    output: true
 
-    sass:
-        sass_dir: _sass
+defaults:
+  -
+    scope:
+      type: projects
+    values:
+      layout: post
+  -
+    scope:
+      type: students
+    values:
+      layout: post
+  -
+    scope:
+      type: news
+    values:
+      layout: post
+  -
+    scope:
+      type: workshops
+    values:
+      layout: post
+  -
+    scope:
+      type: openlectures
+    values:
+      layout: post

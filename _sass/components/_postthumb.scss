@@ -1,16 +1,39 @@
 #main_box {
-  @include span-columns(6);
+  @include span-columns(3);
   display: block;
   height: 12em;
   margin-bottom: 1.5em;
   background-color: #6c9a8f;
 }
 
-#post_thumb {
+.post_thumb {
   @include span-columns(3);
-  @include omega(3n);
+  @include omega(4n);
   display: block;
   height: 12em;
   margin-bottom: 1.5em;
   background-color: steelblue;
+  background-size: cover;
+  background-position: center;
+}
+
+.post_cat {
+  display: block;
+  @include span-columns(6);
+  @include shift(6);
+  padding: .5em;
+  height: 2.5em;
+  text-align: center;
+  background-color: lightsteelblue;
+}
+
+.post_title {
+  display: float;
+  @include span-columns(12);
+  height: 3em;
+  text-align: center;
+  margin-top: 6.5em;
+  padding: .5em;
+  margin-bottom: 0;
+  background-color: dimgray;
 }

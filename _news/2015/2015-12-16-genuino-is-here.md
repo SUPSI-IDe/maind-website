@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  “Hangoutable“
+title:  Genuino is here
 date:   2015-12-16 16:14:50 +0100
-categories: content
-author: Paolo
+author: internet
+categories: news
 tag: featured
 ---
 This is the content of the test page!
