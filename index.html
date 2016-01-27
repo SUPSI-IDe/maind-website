@@ -2,15 +2,19 @@
 layout: default
 ---
 
+<div id="page_container"></div>
 
-<div id="main_box"></div>
+<div class="main_box">
+    <div>Maind program offers one year education in interaction design to make you a beautiful person.</div>
+    <p><a href="/adminssion/">Applay now</a></p>
+</div>
 
 {% for news in site.news %}
 
-<div class="post_thumb" style="background-image: url({{ news.url | remove: '.html' }}/main.jpg)">
+    <div class="post_thumb" style="background-image: url({{ news.url | remove: '.html' }}/main.jpg)">
         <div class="post_cat">{{ news.categories }}</div>
-        <div class="post_title"><a href="{{ news.url | prepend: site.baseurl }}">{{ news.title }}</a></div>
-</div>
+        <a href="{{ news.url | prepend: site.baseurl }}"><div class="post_title">{{ news.title }}</div></a>
+    </div>
 
 {% endfor %}
 
@@ -18,7 +22,7 @@ layout: default
 
 <div class="post_thumb" style="background-image: url({{ openlecture.url | remove: '.html' }}/main.jpg)">
     <div class="post_cat">{{ openlecture.categories }}</div>
-    <div class="post_title"><a href="{{ openlecture.url | prepend: site.baseurl }}">{{ openlecture.title }}</a></div>
+    <a href="{{ openlecture.url }}"><div class="post_title">{{ openlecture.title }}</div></a>
 </div>
 
 {% endfor %}
@@ -26,8 +30,8 @@ layout: default
 {% for workshop in site.workshops %}
 
 <div class="post_thumb" style="background-image: url({{ workshop.url | remove: '.html' }}/main.jpg)">
-    <div class="post_cat" >{{ workshop.categories }}</div>
-    <div class="post_title"><a href="{{ workshop.url | prepend: site.baseurl }}">{{ workshop.title }}</a></div>
+    <div class="post_cat">{{ workshop.categories }}</div>
+    <a href="{{ workshop.url }}"><div class="post_title">{{ workshop.title }}</div></a>
 </div>
 
 {% endfor %}
@@ -36,14 +40,25 @@ layout: default
 {% if project.tag == "featured" %}
 
 <div class="post_thumb">
-    <div class="post_cat">{{ project.categories }}</div>
-    <div class="post_title"><a href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a></div>
+    <div class="post_cat">{{ project.categories}}</div>
+    <a href="{{ project.url | prepend: site.baseurl }}"><div class="post_title">{{ project.title }}</div></a>
 </div>
 
 {% endif %}
 {% endfor %}
 
+{% for openlecture in site.openlectures %}
 
+<div class="post_thumb" style="background-image: url({{ openlecture.url | remove: '.html' }}/main.jpg)">
+    <div class="post_cat">{{ openlecture.categories }}</div>
+    <a href="{{ openlecture.url }}"><div class="post_title">{{ openlecture.title }}</div></a>
+</div>
+
+{% endfor %}
+
+
+
+<!--
 
 {% for student in site.data.2013-14.students %}
 

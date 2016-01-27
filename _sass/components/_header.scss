@@ -1,42 +1,72 @@
 #header {
 
+  margin-top: 2em;
+  margin-bottom: 8em;
+
   #header_top {
-    height: 10em;
-    //background-color: darkkhaki;
+    height: 5em;
+    @include outer-container();
+    position: relative;
   }
 
   #logo_supsi {
-
+    @include span-columns(4);
     display: block;
-    @include span-columns(3);
+    position: absolute;
+    width: 8em;
   }
 
   #socials {
-    @include span-columns(3);
-    @include shift(6);
-    //@include omega();
+    @include span-columns(8);
+    @include shift(4);
     text-align: right;
     display: block;
-    //background-color: #00AA00;
+    font-size: .7em;
+  }
+
+  #socials a:link, a:visited {
+    color: black;
+    font-size: 1em;
+    text-decoration: none;
+  }
+
+  #socials a:hover {
+    font-size: 1em;
+    text-decoration: underline;
   }
 
   #header_bottom {
-    height: 10em;
-    //background-color: #FFFFDF;
+    position: relative;
+    height: 6em;
+    margin-top: 2em;
   }
 
   #logo_maind {
     display: block;
-    @include span-columns(4);
+    height: 6em;
   }
 
   #header_nav {
+    position: absolute;
+    bottom: 0;
+    right: 0;
     display: block;
-    @include span-columns(8);
+    @include span-columns(9);
+    font-weight: 600;
     //@include omega();
     //background-color: #00d6b2;
     text-align: right;
-    height: inherit;
+
+  }
+
+  #header_nav a:link, a:visited {
+    font-size: 1em;
+    text-decoration: none;
+  }
+
+  #header_nav a:hover {
+    font-size: 1em;
+    text-decoration: underline;
   }
 
 }

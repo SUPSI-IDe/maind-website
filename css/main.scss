@@ -17,9 +17,18 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+/**
+* Fonts
+*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
+
+$font-normal: 'Open Sans', sans-serif;
+
 html {
-    color: #222;
+    font-family: $font-normal;
+    font-weight: 400;
     font-size: 1em;
+    color: #222;
     line-height: 1.4;
 }
 
@@ -116,6 +125,7 @@ body {
 
 @import "components/header";
 @import "components/postthumb";
+@import "components/portfolio";
 
 // and views in /views
 

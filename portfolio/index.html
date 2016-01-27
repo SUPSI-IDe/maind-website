@@ -1,0 +1,63 @@
+---
+layout: default
+---
+<!-- PORTFOLIO INDEX -->
+
+<script>
+    function sortByYear() {
+
+        var year_choosen = document.getElementById("project_selector_year").value;
+
+        var elements_selected;
+
+        if(year_choosen != "all") {
+            elements_selected = document.getElementsByClassName("year" + year_choosen);
+        }
+        else {
+            elements_selected = document.getElementsByClassName("project_box");
+        }
+
+        var all_elements = document.getElementsByClassName("project_box");
+
+        // hide all the elements
+        for(var i=0; i<all_elements.length; i++) {
+            all_elements[i].style.display = "none";
+        };
+
+        // show only the one slected
+        for(var i=0; i<elements_selected.length; i++) {
+            elements_selected[i].style.display = "block";
+        };
+
+    };
+</script>
+
+<div id="project_selector">
+    <select title="project_selector_year" id="project_selector_year">
+
+        <option value="all" onclick="sortByYear()">All</option>
+        <option value="2012-13" onclick="sortByYear()">2012/13</option>
+        <option value="2013-14" onclick="sortByYear()">2013/14</option>
+        <option value="2014-15" onclick="sortByYear()">2014/15</option>
+        <option value="2015-16" onclick="sortByYear()" selected>2015/16</option>
+
+    </select>
+</div>
+
+<div id="projects_container">
+
+    {% for project in site.projects %}
+
+    <a href="{{ project.url |remove: "index.html" }}">
+    <div class="project_box year{{ project.year | replace: '/', '-' }}" style="background-image: url('{{ project.url | remove: 'index.html' }}main.jpg')">
+
+        <div class="project_description">
+            <div class="project_title">{{ project.title }}</div>
+        </div>
+
+    </div>
+    </a>
+
+    {% endfor %}
+
+</div>
