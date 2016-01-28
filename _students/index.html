@@ -1,0 +1,62 @@
+---
+layout: default
+---
+<!-- PORTFOLIO INDEX -->
+
+<script>
+    function sortByYear() {
+
+        var year_choosen = document.getElementById("students_selector_year").value;
+
+        var elements_selected;
+
+        if(year_choosen != "all") {
+            elements_selected = document.getElementsByClassName("students" + year_choosen);
+        }
+        else {
+            elements_selected = document.getElementsByClassName("student_box");
+        }
+
+        var all_elements = document.getElementsByClassName("student_box");
+
+        // hide all the elements
+        for(var i=0; i<all_elements.length; i++) {
+            all_elements[i].style.display = "none";
+        };
+
+        // show only the one slected
+        for(var i=0; i<elements_selected.length; i++) {
+            elements_selected[i].style.display = "block";
+        };
+
+    };
+</script>
+
+
+<div id="students_selector">
+    <select title="students_selector_year" id="students_selector_year">
+
+        <option value="all" onclick="sortByYear()">All</option>
+        <option value="2013-14" onclick="sortByYear()">2013/14</option>
+        <option value="2014-15" onclick="sortByYear()">2014/15</option>
+        <option value="2015-16" onclick="sortByYear()" selected>2015/16</option>
+
+    </select>
+</div>
+
+
+<div id="students_container">
+
+    {% for year in site.data %}
+
+        {% for student in year[1].students %}
+
+        <div class="student_box students{{year[0]}}" style="background-image: url('{{year[0]}}/{{ student.name | replace: " ", "" | downcase}}{{ student.surname | replace: " ", "" | downcase}}.jpg')">
+                <div class="students_name">{{ student.name }} {{ student.surname}}</div>
+        </div>
+
+        {% endfor %}
+
+    {% endfor %}
+
+</div>

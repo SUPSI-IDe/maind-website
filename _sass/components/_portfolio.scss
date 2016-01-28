@@ -31,7 +31,7 @@
   margin: 2%;
   //@include omega(3n);
   //display: block;
-  //position: relative;
+  position: relative;
 
 
   height: 20em;
@@ -45,13 +45,9 @@
     background-color: #09F;
     padding: .5em;
     margin: .5em;
-
-    /*
     position: absolute;
     display: block;
-    bottom: 2em;
-    width: 100%;
-    */
+    bottom: 0;
 
     .project_title {
       font-size: 1em;
@@ -68,10 +64,10 @@
   }
 }
 
-.year2012-13, .year2013-14, .year2014-15 {
+.projects2011-12, .projects2014-15, .projects2015-16 {
   display: none;
 }
 
-.year2015-16 {
+.projects2013-14 {
   display: block;
 }
