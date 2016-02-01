@@ -3,8 +3,9 @@ layout: default
 ---
 <!-- PORTFOLIO INDEX -->
 
+
 <script>
-    function sortByYear() {
+    function sortBy() {
 
         var year_choosen = document.getElementById("project_selector_year").value;
 
@@ -28,19 +29,29 @@ layout: default
         for(var i=0; i<elements_selected.length; i++) {
             elements_selected[i].style.display = "block";
         };
-
     };
 </script>
+
 
 <div id="project_selector">
 
     <select title="project_selector_year" id="project_selector_year">
-        <option value="all" onclick="sortByYear()">All</option>
-        <option value="2011-12" onclick="sortByYear()">2011/12</option>
-        <option value="2013-14" onclick="sortByYear()" selected>2013/14</option>
-        <option value="2014-15" onclick="sortByYear()">2014/15</option>
-        <option value="2015-16" onclick="sortByYear()">2015/16</option>
+        <option value="all" onclick="sortBy()">All</option>
+        <option value="2011-12" onclick="sortBy()">2011/12</option>
+        <option value="2013-14" onclick="sortBy()" selected>2013/14</option>
+        <option value="2014-15" onclick="sortBy()">2014/15</option>
+        <option value="2015-16" onclick="sortBy()">2015/16</option>
     </select>
+
+    <!--
+    <select title="project_selector_course" id="project_selector_course">
+        <option value="all" onclick="sortBy()">All</option>
+        <option value="cas1" onclick="sortBy()">CAS1</option>
+        <option value="cas2" onclick="sortBy()">CAS2</option>
+        <option value="cas3" onclick="sortBy()">CAS3</option>
+        <option value="thesis" onclick="sortBy()">Thesis</option>
+    </select>
+    -->
 </div>
 
 
