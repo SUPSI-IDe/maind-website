@@ -10,7 +10,7 @@ classname: program
 {% component imgBox %}
 image: academic_year.jpg
 alt: Toot project, winner of the IXD Award in 2015
-text: Academic Year<br>2017-2018<br><br><a href="{{ "/admission" | prepend: site.baseurl }}">Apply Now</a>
+text: Academic Year<br>2018-2019<br><br><a href="{{ "/admission" | prepend: site.baseurl }}">Apply Now</a>
 {% endcomponent %}
 
 ## Designing Advanced Artifacts, Environments and Services
