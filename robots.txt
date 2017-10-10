@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /test/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /js/
+Disallow: /404/
+Disallow: /assets/
+Disallow: /success/

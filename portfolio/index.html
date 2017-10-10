@@ -1,74 +1,46 @@
 ---
-layout: default
+layout: internlanding
+title: Portfolio
+classname: portfolio
 ---
-<!-- PORTFOLIO INDEX -->
+
+<h1>Portfolio</h1>
 
 
-<script>
-    function sortBy() {
+{% component twoPaneFilter %}
+    controls: projects_container
+    left:
+        label: Year
+        attribute: data-year
+        tag: data-tag
+        default: "2015/16"
+        options:
+            2015/16: 2015/16
+            2014/15: 2014/15
+            2013/14: 2013/14
+            2011/12: 2011/12
+            
+    right:
+        label: Module
+        attribute: data-module
+        tag: data-tag
+        default: "featured"
+        options:
+            featured: Featured
+            cas1: CAS1
+            cas2: CAS2
+            cas3: CAS3
+            thesis: Thesis
+            
+{% endcomponent %}
 
-        var year_choosen = document.getElementById("project_selector_year").value;
-
-        var elements_selected;
-
-        if(year_choosen != "all") {
-            elements_selected = document.getElementsByClassName("projects" + year_choosen);
-        }
-        else {
-            elements_selected = document.getElementsByClassName("project_box");
-        }
-
-        var all_elements = document.getElementsByClassName("project_box");
-
-        // hide all the elements
-        for(var i=0; i<all_elements.length; i++) {
-            all_elements[i].style.display = "none";
-        };
-
-        // show only the one slected
-        for(var i=0; i<elements_selected.length; i++) {
-            elements_selected[i].style.display = "block";
-        };
-    };
-</script>
-
-
-<div id="project_selector">
-
-    <select title="project_selector_year" id="project_selector_year">
-        <option value="all" onclick="sortBy()">All</option>
-        <option value="2011-12" onclick="sortBy()">2011/12</option>
-        <option value="2013-14" onclick="sortBy()" selected>2013/14</option>
-        <option value="2014-15" onclick="sortBy()">2014/15</option>
-        <option value="2015-16" onclick="sortBy()">2015/16</option>
-    </select>
-
-    <!--
-    <select title="project_selector_course" id="project_selector_course">
-        <option value="all" onclick="sortBy()">All</option>
-        <option value="cas1" onclick="sortBy()">CAS1</option>
-        <option value="cas2" onclick="sortBy()">CAS2</option>
-        <option value="cas3" onclick="sortBy()">CAS3</option>
-        <option value="thesis" onclick="sortBy()">Thesis</option>
-    </select>
-    -->
-</div>
-
-
-
-<div id="projects_container">
+<div id="projects_container" class="columns">
 
     {% for project in site.projects %}
 
-    <a href="{{ project.url |remove: "index.html" }}">
-    <div class="project_box projects{{ project.year | replace: '/', '-' }}" style="background-image: url('{{ project.url | remove: 'index.html' }}main.jpg')">
-
-        <div class="project_description">
-            <div class="project_title">{{ project.title }}</div>
-        </div>
-
-    </div>
-    </a>
+    {% component projectBox %}
+        project: ->project
+    {% endcomponent %}
 
     {% endfor %}
 

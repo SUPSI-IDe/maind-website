@@ -1,0 +1,33 @@
+---
+layout: internlanding
+title: Open Lectures
+classname: news
+---
+
+<h1>Open Lectures</h1>
+
+<div class="columns news-list">
+
+	{% assign sortedOpenlectures = site.openlectures | sort: 'date' %}
+
+    {% for lecture in sortedOpenlectures reversed %}
+		{% capture suptitle %}
+			<time datetime="{{ lecture.date | date_to_xmlschema }}" itemprop="datePublished">
+				{{ lecture.date | date: "%d.%m.%Y" }}
+			</time>
+		{% endcapture %}
+
+		{% assign img = lecture.relative_path | replace: '.md', '.jpg' %}
+
+		{% component contentBox %}
+			item:
+				url: ->lecture.url
+				image: ->img
+				superTitle: ->suptitle
+				title: ->lecture.title
+				strip: ->lecture.number
+		{% endcomponent %}    
+
+    {% endfor %}
+
+</div>

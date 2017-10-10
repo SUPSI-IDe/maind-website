@@ -1,0 +1,171 @@
+.news-article {
+
+	strong {
+		font-family: 'roboto-black', Arial, sans-serif;
+	}
+
+	main {
+		@include outer-container;
+	}
+
+	.title_container {
+		@include span-columns(12);
+		position: relative;
+		border-top: 0.3rem solid $black;
+
+
+		#icon_back_portfolio {
+			float: left;
+			margin-right: 1.26rem;
+			display: none;
+			
+			//display: inline-block;
+			margin-top: 0.583rem;	
+
+			svg {
+				width: 2.081923rem;
+				height: 1.39615rem;
+			}
+
+			@media all and (max-width: 768px) {
+				display: none;	
+			}
+		}
+
+		.page_title {
+			@extend %x-large;
+			@extend %bold-weight;
+			margin-bottom: 0.2rem;
+			line-height: 120%;
+			padding-top: 0.53rem;
+			height: auto;
+			overflow: hidden;
+			@include span-columns(10);
+			float: left;
+		}
+
+		#icon_back_home {
+			@include span-columns(2);
+			position: absolute;
+			top: 0rem;
+			right: 0rem;
+			text-align: right;
+			//display: inline-block;
+			margin-top: 0.583rem;
+
+			svg {
+				width: 2.081923rem;
+				height: 1.39615rem;
+			}
+		}
+
+	}
+
+
+	time {
+		@extend %x-large;
+		@extend %light-weight;
+		display: inline-block;
+	}
+
+	.category {
+		//margin-top: 0.3rem;
+		@extend %medium;
+		@extend %medium-weight;
+		color: $cyan;
+	}
+
+	.img-box {
+		@include span-columns(12);
+		margin-top: 0;
+		margin-bottom: 3rem;
+
+		img {
+			max-height: 30rem;
+			width: auto;
+		}
+	}
+	article {
+		@include span-columns(12);
+		@extend %medium;
+		@extend %medium-weight;
+
+		p {
+			a:link {
+				color: $black;
+				text-decoration: none;
+				border-bottom: 0.15rem solid $cyan;
+			}
+			a:visited {
+				color: $black;
+				text-decoration: none;
+				border-bottom: 0.15rem solid $cyan;
+			}
+		}
+
+		hr {
+			margin-top: 2rem;
+			margin-bottom: 3rem;
+			border: 0.1rem solid $black;
+		}
+
+		h2 {
+			@extend %large;
+			@extend %bold-weight;
+		}
+
+		p + h2 {
+			margin-top: 2rem;
+		}
+
+		h3 {
+			@extend %medium;
+			@extend %bold-weight;
+			margin-bottom: 0rem;
+			font-size: 1.11538rem;
+			//background-color: $cyan;
+		}
+
+		h3, h2 {
+			
+			a:link, , a:visited, a:active {
+				color: $black;
+				text-decoration: none;
+				border-bottom: 0;
+			}
+
+			a:hover {
+				color: $black;
+				text-decoration: none;
+				border-bottom: 0.15rem solid $cyan;
+			}
+		}
+
+		img {
+			@include span-columns(12);
+			width: 100%;
+			height: auto;
+			margin-bottom: 3rem;
+
+			&.small {
+				@include span-columns(6);
+
+				@media all and (max-width: 768px) {
+					@include span-columns(6);
+				}
+			}
+
+		}
+	}
+
+	@media all and (min-width: 1000px) {
+		article {
+			@include span-columns(9);
+		}
+	}
+}
+
+
+.news-list {
+	margin-top: 1rem;
+}

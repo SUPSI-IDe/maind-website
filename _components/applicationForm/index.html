@@ -1,0 +1,50 @@
+<div class="application-form">
+	{% if active %}
+
+	<!--
+	<script>
+		window.addEventListener("message", receiveMessage, false);
+		function receiveMessage(event) {
+			if (event.origin !== "//lcvform.supsi.ch") return;
+
+			var split = event.data.split('=');
+			if(split.length == 2 && split[0] == 'mf_iframe_height') {
+				var h = parseInt(split[1]);
+				document.getElementById('applicationForm').style.height = h + 'px';
+			}
+		}
+	</script>
+	-->
+	
+
+	<p>Follow <strong><a href="http://lcvform.supsi.ch/form/embed.php?id=57255" class="fill_form" style="color: #000000;font-family: 'roboto-bold', sans-serif;text-decoration: none;border-bottom: 0.1rem solid #00aaff" target="_blank">this link</a></strong> to fill the application form.</p>
+
+
+	<!--
+
+	<script type="text/javascript">
+	var __machform_url = 'http://lcvform.supsi.ch/form/embed.php?id=57255';
+	var __machform_height = 3700;
+	</script>
+	<div id="mf_placeholder"></div>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://lcvform.supsi.ch/form/js/jquery.ba-postmessage.min.js"></script>
+	<script type="text/javascript" src="http://lcvform.supsi.ch/form/js/machform_loader.js"></script>
+
+	-->
+
+	<!--
+	
+	<div class="form-container">
+		<iframe id="applicationForm" scrolling="no" src="//lcvform.supsi.ch/form/embed.php?id=57255" frameborder="0" height="3300"></iframe>
+	</div>
+
+	-->
+	
+
+	{% else %}
+	
+	<p>We aren't currently accepting applications.</p>
+	
+	{% endif %}
+</div>

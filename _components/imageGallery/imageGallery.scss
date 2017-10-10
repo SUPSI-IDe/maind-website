@@ -1,0 +1,32 @@
+.post-gallery {
+	margin-top: 2rem;
+	.columns-gallery {
+		margin-top: 0.5rem;
+		column-count: 1;
+		column-gap: 1rem;
+		widows: 1;
+		orphans: 1;
+
+		> * {
+			display: inline-block;
+			width: 100%;
+		}
+
+
+		@media all and (min-width: 480px) {
+			column-count: 2;		
+		}
+
+		@media all and (min-width: 1000px) {
+			column-count: 3;		
+		}
+
+		@media all and (min-width: 1400px) {
+			column-count: 4;		
+		}
+
+		a {
+			margin-bottom: 1rem;
+		}
+	}
+}

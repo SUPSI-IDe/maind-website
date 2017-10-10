@@ -1,0 +1,32 @@
+---
+layout: internlanding
+title: Success
+classname: news
+---
+
+<div class="title_container_nav">
+	<h1 class="project-title">Success</h1>
+</div>
+
+<p>Your application form has been saved!</p>
+
+
+<div id="campaign"></div>
+
+
+<script type="text/javascript">
+
+	var date = new Date();
+
+	var orderid = date.getUTCFullYear() + "-" +  (date.getUTCMonth()+1) + "-" + date.getUTCDate() + "-" + (date.getUTCHours()+1) + "-" + date.getUTCMinutes() + "-" + date.getUTCSeconds();
+
+	console.log("orderid: " + orderid);
+
+	var img = document.createElement('div');
+
+	img.innerHTML = '<img src="https://my.pampanetwork.com/scripts/sale.php?AccountId=befb61c6&TotalCost=0&OrderID='+orderid+'&ActionCode=lead&CampaignID=0b9f443c" width="1" height="1" >';
+
+	var div = document.getElementById("campaign").appendChild(img);
+
+
+</script>

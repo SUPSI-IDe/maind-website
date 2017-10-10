@@ -9,6 +9,8 @@ module: thesis
 course: Thesis Project
 year: 2013/14
 licence: ccbyncsa
+video: 164586593
+tags: featured
 ---
 toot is an interactive and sound-active toy designed for children aged between three and six years old that wants to develop children’s auditory skills, music attitude and language skills.
 

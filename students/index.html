@@ -1,0 +1,65 @@
+---
+layout: internlanding
+title: Students
+classname: students
+---
+<!-- STUDENTS LIST -->
+
+<div id="students-top-title-bar">
+    <h1>Students</h1>
+</div>
+
+<!-- Filter selector -->
+
+<div class="students-selector">
+    <input type="checkbox" class="filter-toggle" id="chekbox-students-page">
+    <label for="" class="filter-desc" id="students-page-toggle">2017/18</label>
+    <div class="pane">
+        <div class="select">
+
+            <!--
+            <select class="filter">
+                {% for year in site.data reversed %}
+                    {% if year[0] != 'people' and year[0] != 'component_scss' %}
+                    <option value="{{year[0]}}">{{ year[0] | replace: "-", "/" }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            -->
+
+            {% for year in site.data reversed %}
+                {% if year[0] != 'people' and year[0] != 'component_scss' %}
+                    <div class="students-year-selection" property="students-year-selection" data-value="{{year[0]}}">{{ year[0] | replace: "-", "/" }}</div>
+                {% endif %}
+            {% endfor %}  
+
+        </div>
+    </div>
+</div>
+
+<!-- Students list -->
+
+{% for year in site.data reversed %}
+
+{% if year[0] != 'people' and year[0] != 'component_scss' %}
+
+<div class="people-list {{ year[0] }}">
+
+    <div id="students_container">
+
+        {% for student in year[1].students %}
+
+        <div class="student_box students{{year[0]}}">
+            <img class="student_pic" src="{{year[0]}}/{{ student.name | replace: " ", "" | downcase}}{{ student.surname | replace: " ", "" | downcase}}.jpg" height="480px" width="480px">
+            <div class="student_name">{{ student.name }} {{ student.surname}}</div>
+        </div>
+
+        {% endfor %}
+
+
+    </div>
+</div>
+
+{% endif %}
+
+{% endfor %}

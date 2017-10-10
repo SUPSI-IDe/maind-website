@@ -1,0 +1,73 @@
+.img-box {
+	@include span-columns(12);
+	position: relative;
+
+	> picture > img {
+		backgroud-blend-mode: multiply;
+		width: 100%;
+	}
+
+	.text {
+		@extend %large;
+		@extend %medium-weight;
+
+		background-color: $black;
+		color: $white;
+		overflow: hidden; //create block formatting context
+		padding: 1rem;
+		margin-top:  -1px;	// to avoid a white line under the pics caused ftom the size change of the window
+
+		@media all and(min-width: 1023px) {
+			left: 1rem;
+			min-width: 33%;
+			//@include span-columns(4 of 12);		// remove to keep the auto width
+			position: absolute;
+			top: 1rem;
+		}
+	}
+
+	a {
+		border-bottom: .1rem solid $cyan;
+		color: $white;
+		display: inline-block;
+		text-decoration: none;
+	}
+}
+
+
+/* OLD before changes for the project page
+.img-box {
+	position: relative;
+
+	> picture > img {
+		background-color: blue;
+		backgroud-blend-mode: multiply;
+		width: 100%;
+	}
+
+	.text {
+		@extend %large;
+		@extend %medium-weight;
+
+		background-color: $black;
+		color: $white;
+		overflow: hidden; //create block formatting context
+		padding: 1rem;
+
+		@media all and(min-width: 768px) {
+			left: 1rem;
+			min-width: calc(320px - 2rem);
+			position: absolute;
+			top: 1rem;
+			width: 30%;
+		}
+	}
+
+	a {
+		border-bottom: .1rem solid $cyan;
+		color: $white;
+		display: inline-block;
+		text-decoration: none;
+	}
+}
+*/

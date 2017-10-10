@@ -1,0 +1,55 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+{% include head.html %}
+
+<body class="internlanding {{page.classname}} {{layout.classname}}">
+
+{% include header.html %}
+
+{% if layout.sitetitle != false %}
+{% component siteTitle %}
+	title: title
+{% endcomponent %}
+{% endif %}
+
+<main>
+	{{ content }}
+
+		<div class="sub-container">
+			<a href="/admission">
+				<div class="forward">
+					<h3>Academic Year<br>
+					2017/2018</h3>
+					<p class="bottom"><span>Apply Now</span></p>
+				</div>
+			</a>
+			<a href="{{ "/downloads/MasterID-leaflet_2017-18.pdf" | prepend: site.baseurl }}" target="_blank">
+				<div class="forward">
+					<h3>Program Leaflet</h3>
+					<p class="bottom"><span>Download<img src="{{ "/images/download-ico.svg" | prepend: site.baseurl }}"></span></p>
+				</div>
+			</a>
+			<a href="{{ "/downloads/MasterID-syllabus_2015-16.pdf" | prepend: site.baseurl }}" target="_blank">
+				<div class="forward">
+					<h3>Program Syllabus</h3>
+					<p class="bottom"><span>Download<img src="{{ "/images/download-ico.svg" | prepend: site.baseurl }}"></span></p>
+				</div>
+			</a>
+			<!--
+			<div class="forward">
+				<h2>Master's program Sticker</h2>
+				<p class="bottom"><a href="{{ "/downloads/Maind_infographic_2016-17.pdf" | prepend: site.baseurl }}" target="_blank">Download<img src="{{ "/images/download-ico.svg" | prepend: site.baseurl }}"></a></p>
+			</div>
+			-->
+		</div>
+
+</main>
+
+
+{% include footer.html %}
+{% include script-footer.html %}
+
+</body>
+
+</html>

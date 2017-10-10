@@ -6,47 +6,121 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: MAIND SUPSI dev
+title: Master of Advanced Studies in Interaction Design
 email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: Master in Interaction Design. Designing advanced artifacts, environments and services.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "http://www.maind.supsi.ch" # the base hostname & protocol for your site
+twitter_username: MAInDmaster
+
+encoding: UTF-8
+
+# do not touch this or it will fuck up your life
+# and also the website
+future: true
+
+gems:
+  - octopress-autoprefixer
+  - jekyll-sitemap
+  - jekyll-assets
 
 # Build settings
 markdown: kramdown
 sass:
     sass_dir: _sass
 
-exclude: ['node_modules', 'Makefile', 'bourbon', 'neat']
+# test
+assets:
+  sources:
+    - assets
+    - css
+  #baseurl: /assets/
+  compress:
+    css: 'sass'
+    js: 'uglifier'
+  cachebust: hard
+  gzip:
+    - text/css
+    - application/javascript
+
+# end test
+
+exclude: ['node_modules', 'Makefile', 'maind-sito.sublime-project', 'vendor', 'Gemfile', 'Gemfile.lock', 'README.md', 'test']
+
+respimage:
+  homebox: 
+    ppi: [1, 2, 3]
+    base: 
+      w: 360
+      h: 150  
+
+respicture:
+  minibox: 
+    ppi: [1, 2]
+    query_max: 1400
+    fallback: 1400
+    sources:
+      - vw: 15
+
+  imgbox: 
+    ppi: [1, 2]
+    query_max: 1400
+    fallback: 1400
+    sources:
+      - query_min: 768
+        vw: 100
+        suffix: "_sm"
+      - vw: 100
+        suffix: "_xs"
+  
+  contentbox:
+    ppi: [1, 2, 3]
+    query_max: 1440
+    fallback: 600
+    sources:
+      - query_min: 1400
+        vw: 25
+        suffix: "_lg"
+      - query_min: 1000
+        vw: 33.333
+        suffix: "_md"
+      - query_min: 768
+        vw: 50
+        suffix: "_sm"
+      - vw: 100
+        suffix: "_xs"
+
 
 collections:
+  boxes:
+    name: Boxes
+    output: false
   projects:
     name: Projects
     output: true
   news:
     name: News
     output: true
-  students:
-    name: Students
-    output: true
+  # students:
+    # name: Students
+    # output: true
   workshops:
     name: Workshops
     output: true
   openlectures:
     name: Openlectures
     output: true
+  # people:
+    # name: People
+    # output: true
+
 
 defaults:
   -
     scope:
       type: projects
     values:
-      layout: post
+      layout: project
   -
     scope:
       type: students
@@ -56,14 +130,14 @@ defaults:
     scope:
       type: news
     values:
-      layout: post
+      layout: news
   -
     scope:
       type: workshops
     values:
-      layout: post
+      layout: news
   -
     scope:
       type: openlectures
     values:
-      layout: post
+      layout: news

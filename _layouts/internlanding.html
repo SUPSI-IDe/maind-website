@@ -1,0 +1,26 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+{% include head.html %}
+
+<body class="internlanding {{page.classname}} {{layout.classname}}">
+
+{% include header.html %}
+
+{% if layout.sitetitle != false %}
+{% component siteTitle %}
+	title: title
+{% endcomponent %}
+{% endif %}
+
+<main>
+	{{ content }}
+</main>
+
+
+{% include footer.html %}
+{% include script-footer.html %}
+
+</body>
+
+</html>

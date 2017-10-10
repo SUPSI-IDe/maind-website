@@ -1,0 +1,224 @@
+.internlanding.project {
+	.header-placeholder {
+		height: 5rem;
+	}
+	main {
+		padding: 0;
+	}
+
+	.title_container {
+		@include outer-container;
+		padding: 0 1rem;
+		margin-bottom: 1.30769rem;
+		margin-top: 1.30769rem;
+		overflow: hidden;
+		
+
+		#icon_back_portfolio {
+			float: left;
+			margin-right: 1.26rem;
+			
+			//display: inline-block;
+			margin-top: 0.583rem;	
+
+			svg {
+				width: 2.081923rem;
+				height: 1.39615rem;
+			}
+
+			@media all and (max-width: 768px) {
+				display: none;	
+			}
+		}
+
+		#icon_back_home {
+			@include span-columns(2);
+			float: right;
+			text-align: right;
+			//display: inline-block;
+			margin-top: 0.583rem;
+
+			svg {
+				width: 2.081923rem;
+				height: 1.39615rem;
+			}
+		}
+
+		.project-title {
+			@include span-columns(10);
+			float: left;
+		}
+
+		.hidden {
+			display: none;
+		}
+
+		a:hover {
+			svg {
+				line, polyline {
+					stroke: $cyan;
+				}
+				path {
+					fill: $cyan;
+				}
+			}
+		}
+	}
+
+	/*	<div class="project_back_icon"></div> // at the place of the svg in the html
+	.project_back_icon {
+		float: left;
+		margin-right: 1.26rem;
+		width: 2.4969230769rem;
+		display: block;
+		position: relative;
+
+		background-image: svg-url($icon_prjects_back);
+		width: 2.081923rem;
+		height: 1.39615rem;
+		display: inline-block;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-size: 2.081923rem 1.39615rem;
+		margin-top: 0.583rem;			
+	}
+	*/
+
+	.project-title {
+		@extend %x-large;
+		@extend %bold-weight;
+		margin-bottom: 0;
+		float: left;
+		display: inline-block;
+		margin-right: 1rem;
+	}
+
+	.image {
+		margin-bottom: 1rem;
+		padding: 0 1rem;
+		width: 100%;
+
+		picture img {
+			width: 100%;
+		}
+
+
+		@media all and (max-width: 465px) {
+			padding: 0;
+		}
+	}
+
+	h2 {
+		margin-bottom: 0;
+	}
+
+
+}
+
+.project {
+	article {
+		@include clearfix;
+		@include outer-container;
+		
+		padding: 0 1rem;
+
+		.black-box {
+			background-color: $black;
+			color: $white;
+			padding: 1rem;
+			margin-top: 0;
+
+			dt {
+				@extend %small;
+				margin-bottom: 0;
+			}
+
+			dd {
+				margin-bottom: 1rem;
+				margin-left: 0;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		> .aside {
+			@include span-columns(12 of 12);
+		}
+		> .text {
+			@include span-columns(12 of 12);
+		}
+
+		@media all and (min-width: 1024px) {
+			.image {
+				margin-bottom: 2rem;
+			}
+			> .aside {
+				@include span-columns(4 of 12);
+				@include shift(8);
+			}
+
+			> .text {
+				@include span-columns(8 of 12);
+				@include shift(-12);
+			}
+		}
+	}
+
+	.padding_sides {
+		padding: 0 1rem;
+	}
+
+	#other-projects-title {
+		margin-top: 2rem;
+	}
+
+	.linked-projects {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.linked-project {
+		@extend %bold-weight;
+
+		display: none;
+		margin: 0.3rem;
+		text-decoration: inherit;
+		color: $black;
+
+		flex-grow: 1;
+
+		background-color: $grey;
+
+
+		&.current {
+			background: $cyan;
+			color: $white;
+		}
+		
+
+		&.relevant {
+			display: flex;
+		}
+
+		.title {
+			display: block;
+			padding: .5rem;
+			flex-grow: 2;
+		}
+
+		img {
+			flex-grow: 1;
+			height: 4rem;
+			object-fit: cover;
+		}
+
+		@media all and (min-width: 700px) {
+			max-width: 50%;
+		}
+
+		@media all and (min-width: 1400px) {
+			max-width: 33%;
+		}
+	}
+}

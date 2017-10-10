@@ -1,0 +1,34 @@
+.internlanding {
+
+	@extend %medium;
+	@extend %medium-weight;
+
+	main > h1 {
+		@extend %x-large;
+		@extend %bold-weight;
+
+		border-top: .3rem solid $black;
+		line-height: 4.0692rem;
+		height: 3.7rem;
+	}
+
+	h2 {
+		@extend %large;
+		@extend %bold-weight;
+	}
+
+
+	h3 {
+		@extend %medium;
+		@extend %bold-weight;
+	}
+
+	p {
+		@extend %medium;
+		@extend %regular-weight;
+	}
+	
+	blockquote, blockquote p {
+		@extend %regular-italic;
+	}
+}

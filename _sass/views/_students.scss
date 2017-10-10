@@ -1,0 +1,176 @@
+#students-top-title-bar {
+ 	border-top: 0.3rem solid $black;
+ 	//border-bottom: 0.15rem solid $black;
+ 	height: 5.34rem;
+
+	h1 {
+		@include span-columns(8);
+        line-height: 4.0692rem;
+	    margin-top: 0;
+	    margin-bottom: 0.67rem;
+	}
+
+	select {
+		@include span-columns(4);
+		@extend %medium;
+		@extend %medium-weight;
+		height: 4.038rem;
+		-webkit-appearance: none; 
+		-moz-appearance: none;
+		appearance: none;
+		background-color: $white;
+		border: none;
+	}
+
+	select::-ms-expand { 
+	    display: none; /* hide the default arrow in ie10 and ie11 */
+	}
+}
+
+.students-selector {
+	@include outer-container;
+	margin-bottom: 2rem;
+
+	border: 1px solid $black;
+
+	.filter-toggle {
+		display: none;
+	}
+
+	.filter-desc {
+		@extend %x-large;
+		@extend %medium-weight;
+
+		display: block;
+		min-height: 1.7rem;
+		padding: 0.3rem 1.6rem 0.3rem 1rem;
+		position: relative;
+		cursor: pointer;
+	}
+
+	.filter-desc::before {
+		content: "";
+		background-image: svg-url($icon_drop_filter);
+		background-repeat: no-repeat;
+		background-size: contain;
+		display: block;
+		width: 1.4rem;
+		height: 0.7412rem;
+		position: absolute;
+		right: 0.8rem;
+		top: 1.2rem;
+		transform: rotateX(0deg);
+		transition: transform 400ms ease;
+	}
+
+	.pane {
+		border-top: 1px solid rgba(0, 0, 0, 0);
+		display: flex;
+		max-height: 0px;
+		overflow: hidden;
+		//padding: 1rem;
+		transition: max-height 400ms ease, border-top 0s;
+		width: 100%;
+
+		.filter {
+			display: none;
+		}
+
+		.select {
+			padding-left: 1rem;
+			margin: 0.5rem 0 0.5rem 0;
+			width: 100%;
+
+			.students-year-selection {
+				line-height: 150%;
+				width: 100%;
+				cursor: pointer;
+			}
+
+			/*
+			option {
+				cursor: pointer;
+				line-height: 1.61538rem;
+				position: relative;
+				padding-left: 1rem;
+
+				&.selected {
+					@extend %bold-weight;
+				}
+			}
+			*/
+		}
+	}
+
+	input:checked ~ .pane {
+		max-height: 100vh;
+		border-top: 1px solid rgba(0, 0, 0, 1);
+	}
+	input:checked ~ .filter-desc::before {
+		transform: rotateX(180deg);
+	}
+}
+
+/*
+select {
+	position: absolute;
+	top: 1rem;
+	right: 0;
+	
+	border: 0;
+	height: 4rem;
+	-webkit-appearance: none; 
+	-moz-appearance: none;
+	appearance: none;
+
+	@extend %medium;
+	@extend %medium-weight;
+
+	option {
+		background-color: color(white)!important;
+		@extend %medium;
+		@extend %medium-weight;
+	}
+}
+
+*/
+
+#students_container {
+	@include outer-container;
+
+	.student_box {
+		@include span-columns(4);
+		@include omega(3n);
+		margin-bottom: 2rem;
+
+		@media all and (max-width: 998px) {
+			@include span-columns(6);
+			@include omega-reset(3n);
+			@include omega(2n);
+		}
+
+		@media all and (max-width: 500px) {
+			@include span-columns(12);
+			@include omega-reset(2n);
+			@include omega(1n);
+		}
+
+		.student_pic {
+			display: block;
+			max-width: 480px;
+			max-height: 480px;
+			height: auto;
+			width: 100%;
+
+		}
+
+		.student_name {
+			margin-top: 0.5rem;
+			@extend %medium;
+			@extend %medium-weight;
+
+		}
+	}
+
+
+}

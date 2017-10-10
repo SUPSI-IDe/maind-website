@@ -1,0 +1,51 @@
+.title_container_nav {
+		@include outer-container;
+		margin-bottom: 1.30769rem;
+		//margin-top: 1.30769rem;
+		overflow: hidden;
+		border-top: 0.3rem solid #121c21;
+
+		#icon_back_home {
+			float: left;
+			margin-right: 1.26rem;
+			line-height: 2.8rem;
+			
+			//display: inline-block;
+			margin-top: 0.583rem;	
+
+			svg {
+				width: 2.081923rem;
+				height: 1.39615rem;
+			}
+
+			@media all and (max-width: 768px) {
+				display: none;	
+			}
+		}
+
+		.project-title {
+			@include span-columns(10);
+			float: left;
+		}
+
+		a:hover {
+			svg {
+				line, polyline {
+					stroke: $cyan;
+				}
+				path {
+					fill: $cyan;
+				}
+			}
+		}
+
+		.project-title {
+			@extend %x-large;
+			@extend %bold-weight;
+			margin-bottom: 0;
+			float: left;
+			display: inline-block;
+			margin-right: 1rem;
+			line-height: 4.0692rem;
+		}
+}

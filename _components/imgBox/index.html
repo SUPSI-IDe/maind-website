@@ -1,0 +1,10 @@
+{% if image %}
+<div class="img-box">
+{% respicture imgbox {{image}} alt="{{alt}}" title="{{title}}" %}
+{% if text %}
+<div class="text">
+	{{text}}
+</div>
+{% endif %}
+</div>
+{% endif %}

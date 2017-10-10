@@ -1,0 +1,99 @@
+.admission {
+	@include clearfix;
+	
+	position: relative;
+
+	border-top: 0.15rem solid $black;
+
+	.black-box {
+		background-color: $black;
+		color: $white;
+		padding: 1rem;
+
+		dt {
+			@extend %small;
+			@extend %medium-weight;
+			margin-bottom: 0;
+		}
+
+		dd {
+			@extend %medium;
+			@extend %medium-weight;
+			margin-bottom: 1rem;
+			margin-left: 0;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.steps {
+		counter-reset: section;
+		padding: 0;
+
+		li {
+			border: 1px solid $black;
+			counter-increment: section;
+			display: inline-block;
+			height: 5rem;
+			margin: 0 0 1rem;
+			padding: 1rem;
+			width: 100%;
+
+			&::before {
+				@extend %x-large;
+				@extend %bold-weight;
+
+				content: counter(section);
+				display: inline-block;
+				width: 2rem;
+			}
+		}
+		
+	}
+
+	.text {
+		p + h2 {
+			margin-top: 2rem;
+		}
+
+		hr {
+			margin-top: 3rem;
+			margin-bottom: 3rem;
+			border: 0.075rem solid $black;
+		}
+	}
+
+	@media all and (min-width: 768px) {
+		.steps {
+			display: flex;
+			li {
+				margin-right: 1rem;
+				height: 11rem;
+				&::before {
+					display: block;
+					width: auto;
+				}
+				
+				&:last-of-type {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	@media all and (min-width: 1024px) {
+		> .aside {
+			@include span-columns(4);
+			@include shift(8);
+			@include omega();
+
+			position: absolute;
+		}
+
+		> .text {
+			@include span-columns(8);
+			//@include shift(-4);
+		}
+	}
+}

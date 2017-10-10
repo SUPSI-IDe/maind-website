@@ -1,0 +1,12 @@
+{% if path and show_gallery %}
+	<section class="post-gallery">
+		<h2>Gallery</h2>
+		<div class="columns-gallery">
+			{% for img in list %}
+				<a href="{{ img | replace_first: '_', '/' }}" data-lightbox="project-gallery" data-title="{{ title }}">
+					{% respicture contentbox {{img}} alt="{{title}}" %}
+				</a>
+			{% endfor %}
+		</div>
+	</section>
+{% endif %}

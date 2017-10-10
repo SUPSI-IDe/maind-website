@@ -8,6 +8,7 @@ teacher: Laura Licari / Frog Design
 module: thesis
 course: Thesis Project
 year: 2013/14
+vimeo: 164582583
 licence: ccbyncsa
 ---
 Titou is a portable and wearable medium (device and Application), for music lover that let the user have a fully empathic experience by listening music trough an innovative and engaging service. The concept has been inspired from the Renard of the little prince. In particular a relation between two friends that grow day by day is a very interesting thing for the project.

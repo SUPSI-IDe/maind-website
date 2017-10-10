@@ -1,0 +1,20 @@
+.embedded-video {
+	position: relative;
+	padding-bottom: 56.2757202%;
+	height: 0;
+	overflow: hidden;
+	background-color: blue;
+
+	margin-bottom: 3rem;
+	margin-top: 2rem;
+}
+
+.embedded-video iframe, .embedded-video object, .embedded-video embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	background-color: color(white);
+}

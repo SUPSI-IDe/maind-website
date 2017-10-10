@@ -1,0 +1,52 @@
+---
+layout: internlanding
+classname: news-article
+---
+<div class="title_container">
+	<a href="/portfolio" id="icon_back_portfolio">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 width="154.024px" height="100px" viewBox="-161.111 0 154.024 100" enable-background="new -161.111 0 154.024 100"
+		 xml:space="preserve">
+			<line fill="none" stroke="#1D1D1B" stroke-width="13.3791" stroke-linecap="round" stroke-linejoin="round" x1="-18.367" y1="50.002" x2="-138.267" y2="50.002"/>
+			<polyline fill="none" stroke="#1D1D1B" stroke-width="13.3791" stroke-linecap="round" stroke-linejoin="round" points="
+				-98.09,91.874 -149.83,50.002 -98.096,8.126 "/>
+		</svg>
+	</a>
+
+	<h1 class="page_title">{{page.title}}</h1>
+
+	<a href="/" id="icon_back_home">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+		<path fill="#1D1D1B" d="M96.315,3.684c2.989,2.989,2.989,7.837,0,10.826L14.511,96.315c-2.989,2.99-7.837,2.989-10.826,0l0,0
+			c-2.989-2.989-2.989-7.836,0-10.826L85.489,3.685C88.479,0.695,93.326,0.695,96.315,3.684L96.315,3.684z"/>
+		<path fill="#1D1D1B" d="M3.685,3.684c-2.989,2.989-2.989,7.837,0,10.826l81.805,81.805c2.989,2.99,7.837,2.989,10.826,0l0,0
+			c2.989-2.989,2.989-7.836,0-10.826L14.511,3.685C11.521,0.695,6.674,0.695,3.685,3.684L3.685,3.684z"/>
+		</svg>
+	</a>
+</div>
+
+{% if page.categories contains 'workshop' %}
+{% else %}
+<time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+  {{ page.date | date: "%d.%m.%Y" }}
+</time>
+{% endif %}
+
+<p class="category">
+{% if page.categories contains 'openlecture' %}
+	{{ page.categories[0] | prepend: '#' }} {{ page.number | prepend: '#' }}
+{% else %}
+	{{ page.categories[0] | prepend: '#' }}
+{% endif %}
+</p>
+
+{% assign img = page.relative_path | replace: '.md', '.jpg' %}
+
+{% component imgBox %}
+  image: ->img
+{% endcomponent %}
+
+<article>
+	{{ content }}
+</article>

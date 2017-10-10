@@ -1,0 +1,65 @@
+// Baseline, measured in pixels
+// The value should be the same as the font-size value for the html element
+// If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
+// then the variable below would be 10px.
+// from https://github.com/bitmanic/rem/blob/master/stylesheets/_rem.scss
+$baseline-px: 17px;
+
+@mixin rem($property, $px-values) {
+	// Convert the baseline into rems
+	$baseline-rem: $baseline-px / 1rem * 1;
+	// Print the first line in pixel values
+	#{$property}: $px-values;
+	// If there is only one (numeric) value, return the property/value line for it.
+	@if type-of($px-values) == 'number' {
+		#{$property}: $px-values / $baseline-rem; }
+	@else {
+		// Create an empty list that we can dump values into
+		$rem-values: ();
+		@each $value in $px-values {
+			// If the value is zero or not a number, return it
+			@if $value == 0 or type-of($value) != 'number' {
+				$rem-values: append($rem-values, $value); }
+			@else {
+				$rem-values: append($rem-values, $value / $baseline-rem); } }
+		// Return the property and its list of converted values
+		#{$property}: $rem-values; } }
+
+//
+//  Function to create an optimized svg url
+//
+@function svg-url($svg){
+    //    
+    //  Chunk up string in order to avoid 
+    //  "stack level too deep" error
+    //     
+    $encoded:'';
+    $slice: 2000;
+    $index: 0;
+    $loops: ceil(str-length($svg)/$slice);
+    @for $i from 1 through $loops {
+        $chunk: str-slice($svg, $index, $index + $slice - 1); 
+        //
+        //   Encode (may need a few extra replacements)
+        //
+        $chunk: str-replace($chunk,'"','\'');
+        $chunk: str-replace($chunk,'<','%3C');
+        $chunk: str-replace($chunk,'>','%3E');
+        $chunk: str-replace($chunk,'&','%26');
+        $chunk: str-replace($chunk,'#','%23');       
+        $encoded: #{$encoded}#{$chunk};
+        $index: $index + $slice; 
+    }
+    @return url("data:image/svg+xml;charset=utf8,#{$encoded}");   
+}
+            
+//  Helper function to replace characters in a string
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search); 
+    @if $index { 
+        @return str-slice($string, 1, $index - 1) + $replace + 
+            str-replace(str-slice($string, $index + 
+            str-length($search)), $search, $replace); 
+    }
+    @return $string; 
+}

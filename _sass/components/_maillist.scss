@@ -1,0 +1,112 @@
+.mail-form {
+	border: 1px solid $black;
+	padding: 1rem 1rem 0;
+	height: 9rem;
+
+	h2 {
+		@extend %medium;
+		@extend %bold-weight;
+		width: 100%;
+		border-style: none;
+	}
+
+	.email {
+		@extend %small;
+		@extend %medium-weight;
+		height: 2rem;
+		padding-left: 0.5rem;
+		margin-bottom: 0.5rem;
+		background-color: $white;
+		border: 0.1rem solid $black;
+		color: $black;
+	}
+
+	[type=email] {
+		&::placeholder {
+			color: $gray;
+		}
+	}
+
+	.button {
+		@extend %small;
+		@extend %medium-weight;
+		
+		background-color: $black;
+		border: 0;
+		color: $white;
+		outline: none;
+		height: 2rem;
+		text-align: center;
+
+		-webkit-appearance: none;
+		-moz-appearance: none;
+
+		-webkit-border-radius:0; 
+   		border-radius:0;
+	}
+
+	.input {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+
+		-webkit-border-radius:0; 
+   		border-radius:0;
+	}
+
+	
+}
+
+// homepage style
+.sub-container .mail-form {
+
+	@include span-columns(4);
+	@include omega(3n);
+
+	.email {
+		@include span-columns(4 of 4);
+	}
+	.button {
+		@include span-columns(4 of 4);
+	}
+
+
+	@media all and (min-width: 768px) and (max-width: 999px) {
+		@include span-columns(12);
+		height: 7rem;
+		.email {
+			@include span-columns(8);
+		}
+		.button {
+			@include span-columns(4);
+		}
+	}
+
+	@media all and (max-width: 767px) {
+		@include span-columns(12);
+		height: 9rem;
+		.email {
+			@include span-columns(12 of 12);
+			margin-bottom: 0.5rem;
+		}
+		.button {
+			@include span-columns(12 of 12);
+		}
+	}
+}
+
+// contacts style
+.contacts .mail-form {
+	@include outer-container;
+
+	h2 {
+		@extend %medium;
+		@extend %bold-weight;
+	}
+
+	.email {
+		@include span-columns(12);
+	}
+	.button {
+		@include span-columns(12);
+	}
+}

@@ -1,0 +1,50 @@
+<div class="two-pane-filter">
+    <input type="checkbox" id="filter-toggle-{{id}}" class="filter-toggle">
+    <label for="filter-toggle-{{id}}" class="filter-desc"></label>
+    <div class="panes">
+        <div class="pane">
+            <div class="label">{{left.label}}</div>
+            <div class="select">
+                <select class="filter" aria-controls="{{controls}}" data-filter-attribute="{{left.attribute}}" data-filter-label="{{left.label}}" data-filter-tag="{{left.tag}}">
+                    <!-- <option value="*">All</option> -->
+                    {% for option in left.options %}
+                    <option value="{{option[0]}}" {%if left.default == option[0] %}selected{% endif %}>{{ option[1] }}</option>
+                    {% endfor %}
+                </select>
+
+                <!-- <div class="option" data-value="*">All</div> -->
+                {% for option in left.options %}
+                <div class="option {%if left.default == option[0] %}selected{% endif %}" data-value="{{option[0]}}">{{ option[1] }}</div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="pane">
+            <div class="label">{{right.label}}</div>
+            <div class="select">
+                <select class="filter" aria-controls="{{controls}}" data-filter-attribute="{{right.attribute}}" data-filter-label="{{right.label}}" data-filter-tag="{{left.tag}}">
+                    <!-- <option value="*">Featured</option> -->
+                    {% for option in right.options %}
+                    <option value="{{option[0]}}" {%if right.default == option[0] %}selected{% endif %}>{{option[1]}}</option>
+                    {% endfor %}
+                </select>
+                <!-- <div class="option selected" data-value="*">Featured</div> -->
+                {% for option in right.options %}
+                <div class="option {%if left.default == option[0] %}selected{% endif %}" data-value="{{option[0]}}">{{ option[1] }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+<script type="text/javascript">
+
+    function closeFilter() {
+        console.log('scrolled!');
+        $('.filter-toggle').checked = false;
+    }
+
+    window.addEventListener('scroll', closeFilter);
+</script>
+
+-->

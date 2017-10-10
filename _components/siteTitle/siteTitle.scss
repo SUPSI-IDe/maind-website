@@ -1,0 +1,14 @@
+.site-title {
+
+	height: 9rem - 2.5rem;
+	line-height: 1.2em;
+	margin: 0 1rem;
+	padding: 0;
+
+	a:link, a:hover, a:visited, a:active {
+		text-decoration: none;
+		@extend %large;
+		@extend %bold-weight;
+		color: $black;
+	}
+}

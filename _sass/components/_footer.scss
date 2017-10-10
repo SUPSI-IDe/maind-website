@@ -1,0 +1,20 @@
+.site-footer {
+	@extend %small;
+	@extend %medium-weight;
+
+	position: absolute;
+	left: 0;
+	width: 100%;	
+
+	border-top: .1rem solid $grey;
+	min-height: 2rem;
+	padding: 0.5rem 0 0.5rem 0;
+	line-height: 1rem;
+	margin-top: 2rem;
+
+	.site-footer-inner {
+		max-width: 54rem;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+}

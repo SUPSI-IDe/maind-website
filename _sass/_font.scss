@@ -1,0 +1,179 @@
+@import 'bourbon/bourbon';
+
+@include font-face('roboto-bold', '../fonts/roboto_bold/Roboto-Bold-webfont', normal, $file-formats: eot svg ttf woff);
+@include font-face('roboto-medium', '../fonts/roboto_medium/Roboto-Medium-webfont', normal, $file-formats: eot svg ttf woff);
+@include font-face('roboto-regular', '../fonts/roboto_regular/Roboto-Regular-webfont', normal, $file-formats: eot svg ttf woff);
+@include font-face('roboto-light', '../fonts/roboto_light/Roboto-Light-webfont', normal, $file-formats: eot svg ttf woff);
+@include font-face('roboto-black', '../fonts/roboto_light/Roboto-black-webfont', normal, $file-formats: eot svg ttf woff);
+@include font-face('roboto-regular-italic', '../fonts/roboto_regular_italic/Roboto-Italic-webfont', normal, $file-formats: eot svg ttf woff);
+
+//$base-font-size: 17px;
+//$em-base: 26px;
+//$line-height: 1rem;
+//$line-height2: 2 * $line-height;
+//$line-height3: 3 * $line-height;
+//$line-height-half: .5 * $line-height;
+
+
+html {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	font-size: 26px;
+
+	@include media($x-small) {
+		font-size: 18px;
+	}
+	@include media($small) {
+		font-size: 18px;
+	}
+	@include media($medium) {
+		font-size: 26px;
+	}
+	@include media($large) {
+		font-size: 26px;
+	}
+	@include media($x-large) {
+		font-size: 26px;
+	}
+}
+
+%x-small {
+	//font-size: rem(12);
+	font-size: 0.4615384615rem; //12px;
+	//line-height: $line-height * .5;
+	//margin-bottom: 0.5rem;
+	margin-top: 0;
+}
+
+%small {
+	//font-size: rem($base-font-size / 1.618);
+	font-size: 0.6923076923rem; // 18px
+	//line-height: .5rem;
+	//margin-bottom: 0.5rem;
+	margin-top: 0;
+}
+
+%medium {
+	//font-size: rem($base-font-size);
+	font-size: 1rem;
+	//line-height: 130%;
+	//margin-bottom: 1rem;
+	margin-top: 0;
+}
+
+%large {
+	//font-size: rem($base-font-size * 1.618);
+	font-size: 1.2692307692rem;	// 34px
+	//margin-bottom: 1rem;
+	margin-top: 0;
+}
+
+%x-large { 
+	//font-size: rem($base-font-size * 1.618 * 1.618);
+	font-size: 1.7692307692rem; // 46px
+	//margin-bottom: 1rem;
+	margin-top: 0;
+}
+
+%light-weight {
+	font-family: 'roboto-light', Arial, sans-serif;
+	font-weight: normal;
+}
+
+%regular-weight {
+	font-family: 'roboto-regular', Arial, sans-serif;
+	font-weight: normal;
+	line-height: 150%;
+}
+
+%medium-weight {
+	font-family: 'roboto-medium', Arial, sans-serif;
+	font-weight: normal;
+}
+
+%bold-weight {
+	font-family: 'roboto-bold', Arial, sans-serif;
+	font-weight: normal;
+}
+
+%regular-italic {
+	font-family: 'roboto-regular-italic', Arial, sans-serif;
+}
+
+
+/*
+
+@import 'bourbon/bourbon';
+
+@include font-face('roboto-bold', '../fonts/roboto_bold/Roboto-Bold-webfont', normal, $file-formats: eot svg ttf woff);
+@include font-face('roboto-medium', '../fonts/roboto_medium/Roboto-Medium-webfont', normal, $file-formats: eot svg ttf woff);
+@include font-face('roboto-light', '../fonts/roboto_light/Roboto-Light-webfont', normal, $file-formats: eot svg ttf woff);
+
+
+$base-font-size: 17px;
+$em-base: 26px;
+$line-height: 1rem;
+$line-height2: 2 * $line-height;
+$line-height3: 3 * $line-height;
+$line-height-half: .5 * $line-height;
+
+%x-small {
+	font-size: rem(12);
+	font-size: 12px;
+	//line-height: $line-height * .5;
+	margin-bottom: $line-height * .5;
+	margin-top: 0;
+}
+
+%small {
+	font-size: rem($base-font-size / 1.618);
+	font-size: 18px;
+	//line-height: .5rem;
+	margin-bottom: .5rem;
+	margin-top: 0;
+}
+
+%medium {
+	font-size: rem($base-font-size);
+	//font-size: rem(26px);
+	font-size: 26px;
+	//line-height: 1rem;
+	margin-bottom: 1rem;
+	margin-top: 0;
+}
+
+%large {
+	font-size: rem($base-font-size * 1.618);
+	font-size: 33px;
+	//line-height: 1.618rem;
+	margin-bottom: 1rem;
+	margin-top: 0;
+}
+
+%x-large { 
+	font-size: rem($base-font-size * 1.618 * 1.618);
+	//font-size: 46px;
+	//line-height: 2rem;
+	margin-bottom: 1rem;
+	margin-top: 0;
+}
+
+%light-weight {
+	font-family: 'roboto-light', Arial, sans-serif;
+	font-weight: normal;
+}
+
+%medium-weight {
+	font-family: 'roboto-medium', Arial, sans-serif;
+	font-weight: normal;
+}
+
+%bold-weight {
+	font-family: 'roboto-bold', Arial, sans-serif;
+	font-weight: normal;
+}
+
+
+*/

@@ -1,76 +1,64 @@
 ---
-layout: default
+layout: home
 ---
 
-<div id="page_container"></div>
+{% assign box = site.boxes | where:"title","main" %}
 
-<div class="main_box">
-    <div>Maind program offers one year education in interaction design to make you a beautiful person.</div>
-    <p><a href="/adminssion/">Applay now</a></p>
-</div>
+<ul class="home boxes-columns">
+<li>
+	<div class="box apply-now">
+	    {{ box }}
+	</div>
+</li>
+{% assign sorted = (site.homepage | sort: 'date') | reverse %}
+{% for item in sorted %}
+<li>
+	{% capture suptitle %}
+		<time datetime="{{ item.date | date_to_xmlschema }}" itemprop="datePublished">
+			{{ item.date | date: "%d.%m.%Y" }}
+		</time>
+	{% endcapture %}
 
-{% for news in site.news %}
+	{% if item.categories contains 'project' %}
+		{% assign img = item.relative_path | replace: "/index.md", "/main.jpg" %}
+	{% else %}
+		{% assign img = item.relative_path | replace: '.md', '.jpg' %}
+	{% endif %}
 
-    <div class="post_thumb" style="background-image: url({{ news.url | remove: '.html' }}/main.jpg)">
-        <div class="post_cat">{{ news.categories }}</div>
-        <a href="{{ news.url | prepend: site.baseurl }}"><div class="post_title">{{ news.title }}</div></a>
-    </div>
+	{% component contentBox %}
+		item:
+			url: ->item.url
+			image: ->img
+			superTitle: ->suptitle
+			title: ->item.title
+			strip: ->item.categories
+	{% endcomponent %}
 
+
+
+</li>
 {% endfor %}
+</ul>
 
-{% for openlecture in site.openlectures %}
+<div class="sub-container">
+	<div class="forward">
+		<div class="read-more">
+			<p><a href="/news">All News</a></p>
+		</div>
+		<div class="read-more">
+			<p><a href="/workshops">All Workshops</a></p>
+		</div>
+	</div>
 
-<div class="post_thumb" style="background-image: url({{ openlecture.url | remove: '.html' }}/main.jpg)">
-    <div class="post_cat">{{ openlecture.categories }}</div>
-    <a href="{{ openlecture.url }}"><div class="post_title">{{ openlecture.title }}</div></a>
+	<div class="forward">
+		<div class="socials">
+			<p><a href="https://www.facebook.com/Master-in-Interaction-Design-SUPSI-98971502631/" target="_blank">Facebook</a></p>
+		</div>
+
+		<div class="socials">
+			<p><a href="https://twitter.com/MAInDmaster" target="_blank">Twitter</a></p>
+		</div>
+	</div>
+
+	{% include maillist.html %}
 </div>
-
-{% endfor %}
-
-{% for workshop in site.workshops %}
-
-<div class="post_thumb" style="background-image: url({{ workshop.url | remove: '.html' }}/main.jpg)">
-    <div class="post_cat">{{ workshop.categories }}</div>
-    <a href="{{ workshop.url }}"><div class="post_title">{{ workshop.title }}</div></a>
-</div>
-
-{% endfor %}
-
-{% for project in site.projects %}
-{% if project.tag == "featured" %}
-
-<div class="post_thumb">
-    <div class="post_cat">{{ project.categories}}</div>
-    <a href="{{ project.url | prepend: site.baseurl }}"><div class="post_title">{{ project.title }}</div></a>
-</div>
-
-{% endif %}
-{% endfor %}
-
-{% for openlecture in site.openlectures %}
-
-<div class="post_thumb" style="background-image: url({{ openlecture.url | remove: '.html' }}/main.jpg)">
-    <div class="post_cat">{{ openlecture.categories }}</div>
-    <a href="{{ openlecture.url }}"><div class="post_title">{{ openlecture.title }}</div></a>
-</div>
-
-{% endfor %}
-
-
-
-<!--
-
-{% for student in site.data.2013-14.students %}
-
-<div class="post_thumb">
-    <ul>
-        <li>{{ student.name }}</li>
-        <li>{{ student.surname }}</li>
-        <li>{{ student.nationality }}</li>
-    </ul>
-</div>
-{% endfor %}
-
-<!--
-<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
--->

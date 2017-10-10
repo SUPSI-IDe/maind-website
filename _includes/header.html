@@ -1,29 +1,43 @@
-<header id="header" class="site-header">
+<header>
+    <div class="site-header-inner">
+        <input type="checkbox" class="menu-toggler" id="menutoggler">
 
-    <div id="header_top">
-        <img id="logo_supsi" src="{{ "/images/logo_supsi.png" | prepend: site.baseurl }}">
+        <a href="/" class="icon supsi logo" id="main_logo"><span>SUPSI</span></a>
 
-        <div id="socials">
-            <a href="https://www.facebook.com/Master-in-Interaction-Design-SUPSI-98971502631" target="_blank">Facebook</a> /
-            <a href="https://twitter.com/maindmaster" target="_blank">Twitter</a> /
-            <a href="https://vimeo.com/maindmastersupsi">Vimeo</a> /
-            <a href="https://www.flickr.com/photos/maindinteraction/" target="_blank">Flickr</a>
-        </div>
-    </div>
+        <label for="menutoggler" aria-role="button" class="menu-button">
+            <div class="hamburger hamburger--3dy-r">
+                <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                </div>
+            </div>
+        </label>
 
-    <div id="header_bottom">
-
-        <a href="http://localhost:3000/"><img id="logo_maind" src="{{ "/images/logo_maind.png" | prepend: site.baseurl }}"></a>
-
-        <nav id="header_nav">
-            <a href="{{ "/program/" | prepend: site.baseurl }}">Program</a> /
-            <a href="{{ "/admission/" | prepend: site.baseurl }}">Admission</a> /
-            <a href="{{ "/people/" | prepend: site.baseurl }}">People</a> /
-            <a href="{{ "/students/" | prepend: site.baseurl }}">Students</a> /
-            <a href="{{ "/portfolio/" | prepend: site.baseurl }}">Portfolio</a> /
-            <a href="{{ "/contacts/" | prepend: site.baseurl }}">Contacts</a>
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="{{ "/program/" | prepend: site.baseurl }}" class="{% if page.title == 'Program': %}{{'selected'}}{% endif %}">Program</a>
+                </li>
+                <li>
+                    <a href="{{ "/admission/" | prepend: site.baseurl }}" class="{% if page.title == 'Admission': %}{{'selected'}}{% endif %}">Admission</a>
+                </li>
+                <li>
+                    <a href="{{ "/people/" | prepend: site.baseurl }}" class="{% if page.title == 'People': %}{{'selected'}}{% endif %}">People</a>
+                </li>
+                <li>
+                    <a href="{{ "/students/" | prepend: site.baseurl }}" class="{% if page.title == 'Students': %}{{'selected'}}{% endif %}">Students</a>
+                </li>
+                <li>
+                    <a href="{{ "/portfolio/" | prepend: site.baseurl }}" class="{% if (page.title == 'Portfolio' or page.path contains 'project'): %}{{'selected'}}{% endif %}">Portfolio</a>
+                </li>
+                <!-- <li>
+                    <a href="{{ "/workshops/" | prepend: site.baseurl }}">Workshops</a>
+                </li> -->
+                <li>
+                    <a href="{{ "/contacts/" | prepend: site.baseurl }}" class="{% if page.title == 'Contacts': %}{{'selected'}}{% endif %}">Contacts</a>
+                </li>
+            </ul>
         </nav>
-
     </div>
-
 </header>
+
+<div class="header-placeholder"></div>

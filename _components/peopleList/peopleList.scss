@@ -1,0 +1,81 @@
+.people-list {
+
+	h2 {
+		@extend %large;
+		@extend %bold-weight;
+		color: $cyan;
+		line-height: 3.9192rem;
+		margin: 0;
+		padding: 0;
+		height: 4.15rem;
+	}
+
+	ul {
+		@include clearfix;
+		list-style: none;
+		margin-bottom: 2rem;
+		padding: 0;
+	}
+
+	li {
+		padding: .2rem 0;
+		display: inline-block;
+		margin-bottom: 1rem;
+
+		@media all and (min-width: 1400px) {
+			@include span-columns(4);
+			@include omega(3n);
+		}
+
+		@media all and (min-width: 1318px) and (max-width: 1399px) {
+			@include span-columns(4);
+			@include omega(3n);
+		}
+
+		@media all and (min-width: 879px) and (max-width: 1317px) {
+			@include span-columns(6);
+			@include omega(2n);
+		}
+
+		@media all and (max-width: 878px) {
+			@include span-columns(12);
+			@include omega(1n);
+		}
+	}
+
+	.name {
+		@extend %large;
+		@extend %bold-weight;
+		line-height: 1.5rem;
+		margin-bottom: 0;
+		display: block;
+		&::after {
+			content: "";
+			background-image: svg-url($icon_link);
+			width: 0.7rem;
+			height: 0.7rem;
+			display: inline-block;
+			margin-left: 0.5rem;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.role {
+		@extend %small;
+		@extend %medium-weight;
+		color: $cyan;
+		display: block;
+	}
+}
+
+main > .people-list  {
+	h2 {
+		border-top: 0.15rem solid $black;
+	}
+}

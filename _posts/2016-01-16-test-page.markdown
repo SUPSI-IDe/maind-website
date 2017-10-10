@@ -1,9 +1,0 @@
----
-layout: post
-title:  "My first test page!"
-date:   2016-01-16 16:14:50 +0100
-categories: content
-author: “Marco”
-tag: featured
----
-This is the content of the test page!

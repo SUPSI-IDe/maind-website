@@ -1,0 +1,52 @@
+---
+layout: internlanding
+title: People
+---
+
+<h1>People</h1>
+
+{% for category in site.data.people %}
+{% component peopleList %}
+	list: ->category
+{% endcomponent %}
+{% endfor %}
+
+<!--
+
+<h2>Coordination</h2>
+<ul>
+{% for people in site.people %}
+	{% if people.tag == "coordination" %}
+	<li>
+		<span class="name"><a href="{{ people.url }}">{{ people.title }}</a></span>
+		<span class="role">{{ people.role }}</span>
+	{% endif %}
+	</li>
+{% endfor %}
+</ul>
+
+<h2>Faculty</h2>
+<ul>
+{% for people in site.people %}
+	{% if people.tag == "faculty" %}
+	<li>
+		<span class="name"><a href="{{ people.url }}">{{ people.title }}</a></span>
+		<span class="role">{{ people.role }}</span>
+	{% endif %}
+	</li>
+{% endfor %}
+</ul>
+
+<h2>Lecturers</h2>
+<ul>
+{% for people in site.people %}
+	{% if people.tag == "lecturers" %}
+	<li>
+		<span class="name"><a href="{{ people.url }}">{{ people.title }}</a></span>
+		<span class="role">{{ people.role }}</span>
+	{% endif %}
+	</li>
+{% endfor %}
+</ul>
+
+-->

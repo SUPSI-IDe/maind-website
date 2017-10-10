@@ -1,0 +1,12 @@
+---
+#this contains ordered urls to all projects
+---
+{% component jsonGrouper %}
+data: ->site.projects
+groupBy: 
+  - year
+  - module
+  - tags
+projection: 
+  - url
+{% endcomponent %}

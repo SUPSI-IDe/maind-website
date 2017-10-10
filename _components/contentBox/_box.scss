@@ -1,0 +1,105 @@
+.box {
+	background-color: $black;
+	color: $white;
+	margin-bottom: 1rem;
+	padding: 1rem;
+
+	p {
+		@extend %large;
+		@extend %medium-weight;
+
+		a,
+		a:visited {
+			border-bottom: rem(3) solid $cyan;
+			color: $white;
+			text-decoration: none;
+		}
+	}
+}
+
+.content-box {
+	margin-bottom: 1rem;
+
+	a,
+	a:visited,
+	a:hover {
+		text-decoration: none;
+	}
+
+	img {
+		max-width: 100%;
+		width: 100%;	// added to keep images wide as the column
+	}
+
+	.box-description {
+		//@include row();
+		@include outer-container();
+		background-color: $gray;
+		padding: 1rem 0 1rem 1rem;
+		margin-top:  -1px;	// to avoid a white line under the pics caused ftom the size change of the window
+		position: relative;
+
+		.box-description-left {
+			@include span-columns(8);
+			margin-bottom: 0;
+
+			@media all and (max-width: 767px) {
+				@include span-columns(12);
+				margin-bottom: 1.1rem;
+			}
+
+			h2,
+			.super-title {
+				color: $black;
+			}
+
+			.super-title {
+				@extend %x-small;
+				@extend %light-weight;
+				display: block;
+				//@include omega();
+			}
+
+			h2 {
+				@extend %medium;			
+				@extend %bold-weight;
+				//@include span-columns(8);
+				display: inline-block;
+				margin-right: 1rem;
+				line-height: 1.2rem;
+				border: 0;
+				margin-bottom: 0;
+				margin-top: 0;
+			}
+		}
+
+		p {
+			//@include span-columns(4);
+			//@extend %x-small;
+			position: absolute;
+			right: 0;
+			bottom: 0.5rem;
+			font-size: 0.55rem;
+			@extend %medium-weight;
+			//@include span-columns(4);
+			//@include omega();
+			float: right;
+			align-self: flex-end;
+			background-color: $cyan;
+			color: $white;
+			margin-bottom: 0;
+			line-height: 1rem;
+			//padding: 0.1534rem 1rem 0.1534rem 0.5rem;
+			padding: 0.1534rem 0.5rem 0.1534rem 0.5rem;
+		}
+
+		&.wide {
+			.super-title, h1{
+				@include span-columns(7);
+			}
+			p {
+				@include span-columns(5);
+			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+<article class="content-box {{item.classname}}" {% for attr in data %}data-{{attr[0]}}="{{attr[1]}}" {% endfor %}>
+	<a href="{{ item.url | remove: 'index.html' | prepend: site.baseurl }}">
+	
+		{% if item.image  %}
+			{% respicture contentbox {{item.image}} %}
+		{% endif %}
+
+		<div class="box-description">
+			<div class="box-description-left">
+				<span class="super-title">
+					{{ item.superTitle }}
+				</span>
+				<h2>{{ item.title }}</h2>
+			</div>
+			<p>#{{ item.strip }}</p>
+		</div>
+    </a>
+</article>

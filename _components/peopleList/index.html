@@ -1,0 +1,29 @@
+<div class="people-list">
+	<h2 id="{{ list | first | replace: '_', ' ' | lowercase }}">{{ list | first | replace: '_', ' ' | capitalize }}</h2>
+	<ul>
+		{% for person in list[1] %}
+		<li>
+			{% if person.link %}	
+			<a target="_blank" href="{{ person.link }}">
+			{% endif %}	
+
+			<span class="name">{{ person.name }} {{ person.surname }}</span>
+			<span class="role">
+				{% assign words = person.role | split: ";" %}
+				{% assign cat = list | first %}
+				{% for word in words %}
+					{% if cat == 'faculty' %}
+						#{{ word }}
+					{% else %}
+						{{ word }}
+					{% endif %}
+				{% endfor %}
+			</span>
+
+			{% if person.link %}	
+			</a>
+			{% endif %}	
+		</li>
+		{% endfor %}	
+	</ul>	
+</div>
