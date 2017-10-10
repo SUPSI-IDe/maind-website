@@ -38,7 +38,7 @@ A pragmatic problem-solving approach to design is applied in a laboratory enviro
 {% component imgBox %}
 image: design_driven_courses.jpg
 alt: Piano Synth project of programming interactive objects
-text: Design-driven Courses<br><br><a href="{{ "/downloads/MasterID-syllabus_2015-16.pdf" | prepend: site.baseurl }}" target="_blank">Download the Syllabus</a>
+text: Design-driven Courses<br><br><a href="{{ "/downloads/MasterID-syllabus_2017-18.pdf" | prepend: site.baseurl }}" target="_blank">Download the Syllabus</a>
 {% endcomponent %}
 
 ## Topics and Contents
