@@ -5,13 +5,14 @@ title: Admission
 
 <h1>How to apply</h1>
 <div class="admission">
+
 	<div class="aside">
 		<dl class="black-box">
 			<dt>Tuition fees</dt>
-			<dd>15'000.– CHF (MAS)<br>6’000.– CHF (CAS)</dd>
+			<dd>15'000.– CHF (full program)<br>6’000.– CHF (single module)</dd>
 
 			<dt>Scholarships</dt>
-			<dd>Partial scholarships are available upon the evaluation of portfolios and CVs. Winners are entitled to a reduction worth up to 3’000.– CHF each.</dd>
+			<dd>Partial scholarships are available upon the evaluation of portfolios and CVs. Winners are entitled to a reduction into tuition fee worth up to 3’000.– CHF (only full program)</dd>
 			
 			<dt>Application deadline</dt>
 			<dd>15 January 2018</dd>
@@ -20,6 +21,7 @@ title: Admission
 			<dd>17 September 2018</dd>
 		</dl>
 	</div>
+
 	<div class="text">
 		<ol class="steps">
 			<li>
@@ -44,9 +46,38 @@ title: Admission
 
 		<hr>
 
-		{% component applicationForm %}
-			active: yes
-		{% endcomponent %}
+		<h2>Documents</h2>
+		<p>Before submitting your application, please read carefully the information about the enrolment procedure, the payment plan, the VISA application procedure for EU and non EU citizens.</p>
+
 
 	</div>
+
+	<div class="documents">
+
+
+		<div class="black-boxes-container">
+			<a href="http://lcvform.supsi.ch/form/view.php?id=64972">
+				<div class="forward">
+					<h3>Application form<br>
+					2018-2019</h3>
+					<p class="bottom"><span>Apply Now</span></p>
+				</div>
+			</a>
+
+			<a href="{{ "/downloads/MasterID-enrollment-procedure.pdf" | prepend: site.baseurl }}" target="_blank">
+				<div class="forward">
+					<h3>Enrollment and payment</h3>
+					<p class="bottom"><span>Download<img src="{{ "/images/download-ico.svg" | prepend: site.baseurl }}"></span></p>
+				</div>
+			</a>
+
+			<a href="{{ "/downloads/MasterID-visa-information.pdf" | prepend: site.baseurl }}" target="_blank">
+				<div class="forward">
+					<h3>VISA and CH permits</h3>
+					<p class="bottom"><span>Download<img src="{{ "/images/download-ico.svg" | prepend: site.baseurl }}"></span></p>
+				</div>
+			</a>
+		</div>
+
+	</div> 
 </div>

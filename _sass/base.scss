@@ -106,6 +106,10 @@ body {
 }
 
 
+// shared styles
+@import 'shared';
+
+
 // and views in /views
 
 @import 'views/home';
@@ -117,6 +121,8 @@ body {
 @import 'views/news';
 @import 'views/project';
 @import 'views/students';
+
+// for the components
 
 @import 'components/header';
 @import 'components/box-list';
