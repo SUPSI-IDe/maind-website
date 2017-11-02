@@ -17,15 +17,10 @@ Currently he works as as lead product designer at Kano computing, delivering new
 
 
 ## What 
-Lecture by Bruno Schillinger, [www.kano.me][kano]
+Lecture by Bruno Schillinger, [www.kano.me](http://www.kano.me){:target="_blank"}
 
 ## When
-Tuesday 16th November 2017, h. 16:30
+Thursday 16th November 2017, h. 16:30
 
 ## Where
-Atelier Maind/FabLab
-Building A, level-1
-Campus Trevano SUPSI
-
-
-[kano]: http://www.kano.me
+Atelier Maind/FabLab, Building A, level-1, Campus Trevano SUPSI
