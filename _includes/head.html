@@ -13,11 +13,17 @@
 
 
 	<!-- Open Graphs (facebook) -->
+
+	
+
+
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="article">
 	<meta property="og:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
 	<meta property="og:url" content="{{ site.url }}{{ page.url | remove: 'index.html' }}">
-	<meta property="og:image" content="{{ site.url }}{% if page.categories contains 'project' %}{{ page.url | remove: 'index.html' }}{{ 'main.jpg' }}{% elsif page.categories contains 'workshop' or page.categories contains 'openlecture' or page.categories contains 'news' %}{{ page.url | remove: '.html' }}{{ '.jpg' }}{% else %}{{ '/images/logo_maind_social.png'}}{% endif %}" />
+	<meta property="og:image" content="{{ site.url }}{% if page.categories contains 'project' %}{{ page.url | remove: 'index.html' }}{{ 'main.jpg' }}{% elsif page.categories contains 'workshop' or page.categories contains 'openlecture' or page.categories contains 'news' %}{% component checkFileExist %}
+		ogimage: ->page.relative_path
+	{% endcomponent %}{% else %}{{ '/images/logo_maind_social.png'}}{% endif %}" />
 	<meta property="og:site_name" content="Master of Advanced Studies in Interaction Design">
 	<meta property="article:publisher" content="https://www.facebook.com/maindmaster" />
 	<meta property="article:author" content="https://www.facebook.com/maindmaster" />

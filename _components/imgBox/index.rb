@@ -9,6 +9,8 @@ class ImgBoxController
 			end
 		end
 
+		puts data['image']
+
 		if !File.exists?(data['image'].sub! '.jpg', '_h.jpg')
 			puts "Horizontal image doesn't exist: #{data['image']}"
 			if !File.exists?(data['image'].sub! '_h.jpg', '.jpg')
@@ -17,7 +19,7 @@ class ImgBoxController
 			end
 		end
 
-		puts data['image']
+		#puts data['image']
 
 		return data
 
