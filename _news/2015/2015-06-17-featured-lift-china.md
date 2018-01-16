@@ -1,7 +1,6 @@
 ---
 title:  MAIND Projects Featured @ Lift China 2015
 categories: news
-tag: homepage
 ---
 
 

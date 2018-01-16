@@ -1,7 +1,6 @@
 ---
 title:  Maind Alumna, Soraia Binzagr, Keynote Speaker At Lift India 2015
 categories: news
-tag: homepage
 ---
 Master of Advanced Studies in Interaction Design SUPSI is happy to announce that Soraia Binzagr has been invited as keynote speaker to Lift India 2015, the Indian edition of Lift conference, the organization that, since 2006, explores the business and social implications of technological innovation through the organization of international event series and open innovation programs in Europe, Asia and America.
 

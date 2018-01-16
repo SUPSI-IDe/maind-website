@@ -2,7 +2,6 @@
 title: Urs Gaudenz & Marc Dusseiller
 categories: openlecture
 number: 15
-tag: homepage
 ---
 
 Master of Advanced Studies in Interaction Design presents the open lecture #15 held by Urs Gaudenz, founder of [Gaudilabs][gaudilabs], Marc Dusseiller of [Hackteria Open Source Biological Art][hackteria].

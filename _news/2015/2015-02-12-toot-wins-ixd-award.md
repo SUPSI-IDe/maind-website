@@ -1,7 +1,6 @@
 ---
 title: Toot wins the IXD Award
 categories: news
-tag: homepage
 ---
 
 We are happy to announce that toot by Federico Lameri won the [Interaction Design Awards 2015 (Best in Category Expressing)][1]. 
