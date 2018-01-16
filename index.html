@@ -4,41 +4,46 @@ layout: home
 
 {% assign box = site.boxes | where:"title","main" %}
 
-<ul class="home boxes-columns">
-<li>
-	<div class="box apply-now">
-	    {{ box }}
-	</div>
-</li>
-{% assign sorted = (site.homepage | sort: 'date') | reverse %}
-{% for item in sorted %}
-<li>
-	{% capture suptitle %}
-		<time datetime="{{ item.date | date_to_xmlschema }}" itemprop="datePublished">
-			{{ item.date | date: "%d.%m.%Y" }}
-		</time>
-	{% endcapture %}
+<div class="grid-wrapper">
+	<ul class="home boxes-columns grid">
+		<li class="grid-sizer"></li>
+		<li class="grid-item">
+			<div class="grid-item-container">
+				<div class="box apply-now">
+			    	{{ box }}
+				</div>
+			</div>
+		</li>
+	{% assign sorted = (site.homepage | sort: 'date') | reverse %}
+	{% for item in sorted %}
+	<li class="grid-item">
+		<div class="grid-item-container">
+		{% capture suptitle %}
+			<time datetime="{{ item.date | date_to_xmlschema }}" itemprop="datePublished">
+				{{ item.date | date: "%d.%m.%Y" }}
+			</time>
+		{% endcapture %}
 
-	{% if item.categories contains 'project' %}
-		{% assign img = item.relative_path | replace: "/index.md", "/main.jpg" %}
-	{% else %}
-		{% assign img = item.relative_path | replace: '.md', '.jpg' %}
-	{% endif %}
+		{% if item.categories contains 'project' %}
+			{% assign img = item.relative_path | replace: "/index.md", "/main.jpg" %}
+		{% else %}
+			{% assign img = item.relative_path | replace: '.md', '.jpg' %}
+		{% endif %}
 
-	{% component contentBox %}
-		item:
-			url: ->item.url
-			image: ->img
-			superTitle: ->suptitle
-			title: ->item.title
-			strip: ->item.categories
-	{% endcomponent %}
+		{% component contentBox %}
+			item:
+				url: ->item.url
+				image: ->img
+				superTitle: ->suptitle
+				title: ->item.title
+				strip: ->item.categories
+		{% endcomponent %}
 
-
-
-</li>
-{% endfor %}
-</ul>
+		</div>
+	</li>
+	{% endfor %}
+	</ul>
+</div>
 
 <div class="sub-container">
 	<div class="forward">

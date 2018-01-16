@@ -1,38 +1,45 @@
-.home .boxes-columns {
 
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+.home {
+	.grid-wrapper {
+		position: relative;
+		left: -0.5rem;
 
-	/*column-count: 1;
-	column-gap: 1rem;
-	widows: 1;
-	orphans: 1;*/
+		margin-bottom: 0rem;
 
-	> * {
-		//display: inline-block;
-		//width: 100%;
-		padding-right: 1rem;
-	}
-
-
-	@media all and (min-width: 768px) {	
-		> * {
-			width: 50%;
+		@media all and (min-width: 768px) {	
+			margin-bottom: 5rem;
 		}
 
 	}
 
-	@media all and (min-width: 1167px) {
-		> * {
-			width: 33.3333%;
-		}		
+	.grid {
+		width: 100%;
 	}
 
-	@media all and (min-width: 1400px) {
-		> * {
+	.grid:after {
+	  content: '';
+	  display: block;
+	  clear: both;
+	}
+
+	.grid-sizer, .grid-item {
+		width: 100%;
+
+		@media all and (min-width: 768px) {	
+			width: 50%;
+		}
+
+		@media all and (min-width: 1167px) {
 			width: 33.3333%;
-		}		
+		}	
+	}
+
+	.grid-item .content-box > img {
+		width: 100%;
+	}
+
+	.grid-item-container {
+		padding: 0 0.5rem;
 	}
 }
 
@@ -54,7 +61,7 @@
 		height: 22rem;
 	}
 
-	> main > ul {
+	> main .boxes-columns {
 		list-style-type: none;
 		margin: 0;
 		padding: 0;

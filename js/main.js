@@ -194,10 +194,52 @@
 		return total + style;
     }
 
+
+
+    //--- HOMEPAGE ---//
+
 	// stuff for the home page
 	// we use the ready function so that we actually get the correct values
 	// from the DOM
-	$.ready().then(function ready () {
+
+
+	//$$(window).on("load", function() {
+
+	//});
+
+
+
+	/*
+
+	if ($('body.home')) {
+		
+		/*
+		$('.isotope-grid-item').each(function(item) {
+			console.log("ciao");
+		});
+		
+
+
+		$('.isotope-grid').isotope({
+			// options
+			itemSelector: '.isotope-grid-item',
+			layoutMode: 'masonry',
+			masonry: {
+				columnWidth: 300
+			},
+		});
+	};
+
+	*/
+
+
+
+	// by Fabian 2017
+
+	// with .ready() it waits only the DOM to be loaded. With .on("load", function( ... )) it waits also for the images
+
+	/*
+	$.ready().then(function ready() {
 		if ($('body.home')) { // if we are in home
 			// we calculate the amount of columns
 			var columnsCount = parseInt(Math.round($('main > ul').clientWidth / $('main > ul > li').clientWidth));
@@ -244,4 +286,22 @@
 			});			
 		}
 	});
+
+	*/
+
 })()
+
+$(window).on( "load", function() {
+
+	if($('body.home')) {
+
+		var isotope_grid = $('.grid').isotope({
+			itemSelector: '.grid-item',
+			percentPosition: true,
+			masonry: {
+				columnWidth: '.grid-sizer'
+			}
+		});
+	};
+});
+
