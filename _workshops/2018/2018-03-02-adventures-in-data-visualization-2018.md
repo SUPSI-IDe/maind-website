@@ -9,7 +9,7 @@ tag: homepage
 Adventures in data visualization is a summer workshop dedicated to explorations into the field of data visualization by means of computational design approaches and technologies.
 By accessing, creating and manipulating datasets, the participants design and develop projects that make raw data perceivable through digital or physical experiences. 
 
-By leveraging web technologies for visualization, participants will focus on creating data-driven stories and concepts on one of the most hyped financial: cryptocurrency.
+By leveraging web technologies for visualization, participants will focus on creating data-driven stories and concepts on one of the most hyped financial topic: cryptocurrency.
 
 How many cryptocurrencies have been generated in the last few years? What is the average changes in the values every week? How many transactions happen every hours?
 How much money disappeared in cryptocurrencies related scam? How many services are based on cryptos?
