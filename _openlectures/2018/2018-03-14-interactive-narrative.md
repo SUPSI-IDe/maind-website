@@ -6,7 +6,7 @@ tag: homepage
 ---
 
 
-Master of Advanced studies in Interaction Design SUPSI is glad to invite you to the open lecture of ALok b. Nandi, creative director, UX strategist, interaction designer; president of IxDA - Interaction Design Association.
+Master of Advanced studies in Interaction Design SUPSI is glad to invite you to the open lecture of Alok b. Nandi, creative director, UX strategist, interaction designer; president of IxDA - Interaction Design Association.
 
 ## Interactive narrative
 Humans are storytelling creatures, making sense of their ever changing world through stories. From face to face encounters to narrative data, we see nowadays a vast continuum of modes for sharing knowledge through stories.
