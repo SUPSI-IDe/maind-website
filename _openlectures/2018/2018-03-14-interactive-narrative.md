@@ -1,5 +1,5 @@
 ---
-title: Interactive % Narrative?
+title: Interactive narrative
 categories: openlecture
 number: 25
 tag: homepage
@@ -8,7 +8,7 @@ tag: homepage
 
 Master of Advanced studies in Interaction Design SUPSI is glad to invite you to the open lecture of ALok b. Nandi, creative director, UX strategist, interaction designer; president of IxDA - Interaction Design Association.
 
-## Interactive % Narrative?
+## Interactive narrative
 Humans are storytelling creatures, making sense of their ever changing world through stories. From face to face encounters to narrative data, we see nowadays a vast continuum of modes for sharing knowledge through stories.
 Creating narratives allow the connection of dots between different layers of experiences and
 multiple levels of strategies, both in physical and digital scapes. The nature of narrative requires hands-on work, taking into account context and people.
@@ -30,6 +30,6 @@ Open lectures by Alok b. Nandi.
 Wednesday 14th March 2018, h. 16:30.
 
 ## Where
-Atelier Maind/FabLab
-Building A, level-1
+Atelier Maind/FabLab<br/>
+Building A, level-1<br/>
 Campus Trevano SUPSI
