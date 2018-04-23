@@ -79,13 +79,13 @@ Adventures in data visualization 2017 aims to be an event where people exchange 
 
 ### Registration deadline and fee
 
-Places are limited to 20 participants. The registration costs depend on the participation of the sponsors.
+450.- CHF (accommodation and food are not included).
 
-## Waiting list application form
+Deadline: 10 June 2018
 
-The information about the registration will be made available by 16th April 2018. If you would like to join the workshop, please send your application for the waiting list. There is no selection process, once you apply we will notify you about the practical information to complete the registration.
+Places are limited to 20 participants. Please submit your registration by filling the registration form.
 
-[Application form here](http://lcvform.supsi.ch/form/view.php?id=68599){:target="_blank"}
+[Registration form here](http://lcvform.supsi.ch/form/view.php?id=70069){:target="_blank"}
 
 ## Contact
 
