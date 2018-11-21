@@ -1,3 +1,5 @@
+require 'digest'
+
 module RespImage
 	class ResPicture < Liquid::Tag
 		def initialize(tag_name, markup, tokens)
@@ -86,15 +88,17 @@ module RespImage
 				htmlsrc = '<picture>'
 
 				#generate various density versions for each source
-				sources.each_with_index do |source, i| 
+				sources.each_with_index do |source, i|
+					hex = Digest::SHA256.file(source["file"]).hexdigest
 					targetw = i == 0 ? config['query_max'] : confsources[i - 1]['query_min']
 					targetw = targetw / 100 * source['vw']
 					targetw = targetw.round.to_i
 					srcset = ppi.map do |ppi|
+
 						dest = File.join(
 							site.dest, 
 							File.dirname(source['file']).sub(/^_/, ''), 
-							File.basename(source['file'], '.*')  + "_#{targetw}w_#{ppi}x_"  + File.mtime(source['file']).to_i.to_s(16) + File.extname(source['file']))
+							File.basename(source['file'], '.*')  + "_#{targetw}w_#{ppi}x_#{hex}_" + File.extname(source['file']))
 
 						realres = (targetw * ppi).round.to_i
 
